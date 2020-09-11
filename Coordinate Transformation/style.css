@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech&display=swap');
+
+body{
+    font-family: 'Share Tech', sans-serif;
+}
+
+.Banner{
+    position: absolute; 
+    top: 0px;
+    left: 0px;
+}
+
+#figure1{
+    max-width: 100%;
+} 
+
+.FirstContainer{
+    position: relative;
+    top: 200px;
+}  
+
+h1{
+    text-align: center; 
+} 
+
+.CommonIn{
+    margin: 12% auto auto 15%;
+    float: left;
+    font-size: 32px;
+}
+
+input{
+    font-size: 32px;
+}
+
+.SideFig2{
+    margin: 5% 13% 5% auto;
+    float: right;
+}
+
+.SecondContainer{
+    position: absolute;
+    top: 650px; 
+    margin: 1% 2%;
+}
+
+form{
+    font-size: 18px;
+}
+
+.ChangeIn{
+    margin: 11% auto auto 16%;
+    float: left;
+    font-size: 32px;
+}
+
+.SideFig3{
+    margin: 2% 0 auto auto;
+    float: right;
+}
+
+.ThirdContainer{
+    position: absolute;
+    top: 1250px; 
+    margin: 1% 2%;
+}
+
+.Results{
+    margin: auto 40px;
+    font-size: 32px;
+}
+
+.FourthContainer{
+    position: absolute;
+    margin: 1% 2%;
+    top: 1700px; 
+    background-color: black;
+    color: white;
+    width: 1080px;
+}
+
+

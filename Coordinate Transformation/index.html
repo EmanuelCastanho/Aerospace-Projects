@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Coordinate Transformation</title>
+</head>
+<body>
+    <div class="Banner">
+        <img src="Figure1.png" alt="Earth Banner" id="figure1">
+    </div>
+
+    <div class="FirstContainer">
+        <h1>Coordinate Transformation for Air Navigation</h1>
+        <div class="CommonIn">
+            <span>
+                <label for="aInput"><b>a :</b></label>
+                <input id="aInput" type="text" placeholder="6378137" size="9">
+                <label for="aInput">m</label>
+            </span>
+            <p></p>
+            <span>
+                <label for="eInput"><b>e :</b></label>
+                <input id="eInput" type="text" placeholder="0.08181919" size="9">
+            </span>
+        </div>
+        <div class="SideFig2">
+            <img src="Figure2.png" alt="Earth Ellipsoid" id="figure2">
+        </div>
+    </div>
+
+    <div class="SecondContainer">
+        <h2>Choose the type of conversion: </h2>
+        <form name="TypeConv">
+            <input type="radio" name="choice" id="geodToGeoc">From geodetic to geocentric coodinates.
+            <br>
+            <input type="radio" name="choice" id="geocToGeod">From geocentric to geodetic coodinates.
+            <p><b>X</b>, <b>Y</b>, <b>Z</b> are the geocentric coordinates. <b>𝜆</b>, <b>&#966</b>, <b>h</b> are the geodetic longitude, geodetic latitude and geodetic height (ellipsoidal height), respectively.</p>
+        </form>
+        <div class="ChangeIn">
+            <span>
+                <label for="lambdaXInput" id="lambdaORx"><b>𝜆 :</b></label>
+                <input id="lambdaXInput" type="text" size="9">
+                <label for="lambdaXInput" id="1degORm">°</label>
+            </span>
+            <p></p>
+            <span>
+                <label for="phiYInput" id="phiORy"><b>&#966 :</b></label>
+                <input id="phiYInput" type="text" size="9">
+                <label for="phiYInput" id="2degORm">°</label>
+            </span>
+            <p></p>
+            <span>
+                <label for="hZInput" id="hORz"><b>h :</b></label>
+                <input id="hZInput" type="text" size="9">
+                <label for="hZInput">m</label>
+            </span>
+        </div>
+        <div class="SideFig3">
+            <img src="Figure3.png" alt="Earth Coordinates" id="figure3">
+        </div>
+    </div>
+
+    <div class="ThirdContainer">
+        <h2>Results: </h2>
+        <div class="Results">
+            <p id="ResLambdaX">-- = ---- --</p>
+            <p id="ResPhiY">-- = ---- --</p>
+            <p id="ReshZ">-- = ---- --</p>
+            <input type="button" value="SOLVE" onclick="Solve()">
+            <input type="button" value="RESET" onclick="Reset()">
+        </div>
+    </div>
+
+    <div class="FourthContainer">
+        <h2>Acknowledgements: </h2>
+        <p>This is a test</p>
+    </div>  
+</body>
+</html>
