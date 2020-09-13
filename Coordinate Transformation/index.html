@@ -33,26 +33,26 @@
     <div class="SecondContainer">
         <h2>Choose the type of conversion: </h2>
         <form name="TypeConv">
-            <input type="radio" name="choice" id="geodToGeoc">From geodetic to geocentric coodinates.
+            <input type="radio" name="choice" id="geodToGeoc" checked="checked">From geodetic to geocentric coodinates. 
             <br>
             <input type="radio" name="choice" id="geocToGeod">From geocentric to geodetic coodinates.
             <p><b>X</b>, <b>Y</b>, <b>Z</b> are the geocentric coordinates. <b>𝜆</b>, <b>&#966</b>, <b>h</b> are the geodetic longitude, geodetic latitude and geodetic height (ellipsoidal height), respectively.</p>
         </form>
         <div class="ChangeIn">
             <span>
-                <label for="lambdaXInput" id="lambdaORx"><b>𝜆 :</b></label>
+                <label for="lambdaXInput" id="lambdaORx">𝜆 :</label>
                 <input id="lambdaXInput" type="text" size="9">
                 <label for="lambdaXInput" id="1degORm">°</label>
             </span>
             <p></p>
             <span>
-                <label for="phiYInput" id="phiORy"><b>&#966 :</b></label>
+                <label for="phiYInput" id="phiORy">&#966 :</label>
                 <input id="phiYInput" type="text" size="9">
                 <label for="phiYInput" id="2degORm">°</label>
             </span>
             <p></p>
             <span>
-                <label for="hZInput" id="hORz"><b>h :</b></label>
+                <label for="hZInput" id="hORz">h :</label>
                 <input id="hZInput" type="text" size="9">
                 <label for="hZInput">m</label>
             </span>
@@ -77,5 +77,7 @@
         <h2>Acknowledgements: </h2>
         <p>This is a test</p>
     </div>  
+
+    <script src="CoordTransf.js"></script>
 </body>
 </html>
