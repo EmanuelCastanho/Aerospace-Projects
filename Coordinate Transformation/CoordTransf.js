@@ -33,33 +33,31 @@ function Solve(){
     GeodGeocInVector[1] = parseFloat(document.getElementById("phiYInput").value.replace(",","."));
     GeodGeocInVector[2] = parseFloat(document.getElementById("hZInput").value.replace(",","."));
 
-    if ((isNaN(a) || isNaN(e)) == true) {
-        alert("Insert valid equatorial radius and eccentricity values!\n\nExample: a = 6378137 and e = 0.08181919");
-    } 
-
-    if (document.getElementById("geodToGeoc").checked) {
-        GeodVector[0] = GeodGeocInVector[0] * Math.PI/180;
-        GeodVector[1] = GeodGeocInVector[1] * Math.PI/180;
-        GeodVector[2] = GeodGeocInVector[2];
-        Result = Geod2Geoc(GeodVector,a,e);
-
-        document.getElementById("ResLambdaX").innerHTML = "X = " + Result[0].toPrecision(7) + " m";
-        document.getElementById("ResPhiY").innerHTML = "Y = " + Result[1].toPrecision(7) + " m";
-        document.getElementById("ReshZ").innerHTML = "Z = " + Result[2].toPrecision(7) + " m";
-        
+    if ((isNaN(a) || isNaN(e) || isNaN(GeodGeocInVector[0]) || isNaN(GeodGeocInVector[1]) || isNaN(GeodGeocInVector[2])) == true) {
+        alert("Fill in all fields with valid values!");
     } else {
-        GeocVector[0] = GeodGeocInVector[0];
-        GeocVector[1] = GeodGeocInVector[1];
-        GeocVector[2] = GeodGeocInVector[2];
-        Result = Geoc2Geod(GeocVector,a,e);
-
-        document.getElementById("ResLambdaX").innerHTML = "𝜆 = " + Result[0].toPrecision(7) + " °";
-        document.getElementById("ResPhiY").innerHTML = "&#966 = " + Result[1].toPrecision(7) + " °";
-        document.getElementById("ReshZ").innerHTML = "h = " + Result[2].toPrecision(7) + " m";
-    }
-
+        if (document.getElementById("geodToGeoc").checked) {
+            GeodVector[0] = GeodGeocInVector[0] * Math.PI/180;
+            GeodVector[1] = GeodGeocInVector[1] * Math.PI/180;
+            GeodVector[2] = GeodGeocInVector[2];
+            Result = Geod2Geoc(GeodVector,a,e);
     
-
+            document.getElementById("ResLambdaX").innerHTML = "X = " + Result[0].toPrecision(7) + " m";
+            document.getElementById("ResPhiY").innerHTML = "Y = " + Result[1].toPrecision(7) + " m";
+            document.getElementById("ReshZ").innerHTML = "Z = " + Result[2].toPrecision(7) + " m";
+            
+        } else {
+            GeocVector[0] = GeodGeocInVector[0];
+            GeocVector[1] = GeodGeocInVector[1];
+            GeocVector[2] = GeodGeocInVector[2];
+            Result = Geoc2Geod(GeocVector,a,e);
+    
+            document.getElementById("ResLambdaX").innerHTML = "𝜆 = " + Result[0].toPrecision(7) + " °";
+            document.getElementById("ResPhiY").innerHTML = "&#966 = " + Result[1].toPrecision(7) + " °";
+            document.getElementById("ReshZ").innerHTML = "h = " + Result[2].toPrecision(7) + " m";
+        }
+        document.getElementById("SolveButton").disabled = true; 
+    }   
 }
 
 function Geod2Geoc(GeodVector,a,e){
@@ -105,4 +103,19 @@ function Geoc2Geod(GeocVector,a,e){
     GeodVector[2] = (k+Math.pow(e,2)-1)/k*Math.sqrt(Math.pow(D,2)+Math.pow(GeocVector[2],2));
 
     return GeodVector;
+}
+
+function Reset(){
+    document.getElementById("SolveButton").disabled = false;
+
+    document.getElementById("aInput").value = "";
+    document.getElementById("eInput").value = "";
+
+    document.getElementById("lambdaXInput").value = "";
+    document.getElementById("phiYInput").value = "";
+    document.getElementById("hZInput").value = "";
+
+    document.getElementById("ResLambdaX").innerHTML = "-- = ---- --";
+    document.getElementById("ResPhiY").innerHTML = "-- = ---- --";
+    document.getElementById("ReshZ").innerHTML = "-- = ---- --";
 }
