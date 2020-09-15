@@ -69,7 +69,7 @@ function Geod2Geoc(GeodVector,a,e){
          
     let n;
 
-    n = a/Math.sqrt(1-Math.pow(e,2)*Math.sin(Math.pow(GeodVector[1],2)));
+    n = a/Math.sqrt(1-Math.pow(e,2)*Math.pow(Math.sin(GeodVector[1]),2));
 
     GeocVector[0] = (GeodVector[2]+n)*Math.cos(GeodVector[1])*Math.cos(GeodVector[0]);
     GeocVector[1] = (GeodVector[2]+n)*Math.cos(GeodVector[1])*Math.sin(GeodVector[0]);
