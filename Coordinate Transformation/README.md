@@ -10,11 +10,13 @@ Click on SOLVE to get the solution and RESET to clear all data.
 
 ## Versions
 
-Version 1.0.
+Version 1.0. - It had an error in equation n of the function Geod2Geoc.
 
-PyVersion is similar to version 1.0, except that the first presents better precision in the results and is developed in portuguese using Python. 
+Version 1.1. - Current version, with Geod2Geoc fixed.
 
-Future Versions - Edit the CSS file to correct problems with page resizing. Identify precision issues between version 1.0 and PyVersion.
+PyVersion is similar to version 1.1, except that the first was developed in portuguese using Python. 
+
+Future Versions - Edit the CSS file to fix problems with page resizing. 
 
 ## Authors
 
